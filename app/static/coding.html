@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Lab · AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-page="coding">
+
+  <nav class="top-nav app-nav"></nav>
+
+  <main class="app-layout">
+    <aside class="sidebar"></aside>
+
+    <section class="content coding-grid">
+      <!-- Left side: Code Editor Board -->
+      <div class="panel coding-panel">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <p class="kicker">Algorithmic Sandbox</p>
+            <h1 id="coding-title" style="font-size:1.8rem; line-height:1.1;">Python Challenge</h1>
+          </div>
+          <!-- Retry Tracker indicator -->
+          <span class="badge" id="retry-count" style="background:rgba(245,158,11,0.06); border-color:rgba(245,158,11,0.2); color:var(--orange);">Attempt Retries: 0</span>
+        </div>
+
+        <div id="editor" class="editor"></div>
+        <textarea id="fallback-editor" class="fallback-editor" placeholder="Write your python solution here..."></textarea>
+        
+        <div class="coding-actions">
+          <button id="run-code" class="btn ghost" type="button">Run Code</button>
+          <button id="run-tests" class="btn ghost" type="button">Run Tests</button>
+          <button id="submit-code" class="btn primary" type="button">Submit Solution</button>
+        </div>
+      </div>
+
+      <!-- Right side: Problem Details & Console Terminal -->
+      <div style="display:flex; flex-direction:column; gap:24px; height:100%;">
+        <!-- Problem Description Panel -->
+        <div class="panel" style="flex-grow:0.4; overflow-y:auto; padding:24px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <p class="kicker" style="margin:0;">Problem Prompt</p>
+            <span class="badge diff-tag easy" id="coding-difficulty">Easy</span>
+          </div>
+          <p id="coding-prompt" style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6; white-space: pre-wrap;">Loading challenge instructions...</p>
+        </div>
+
+        <!-- Safe Console Terminal Output Panel -->
+        <div class="panel console-panel" style="flex-grow:0.6; display:flex; flex-direction:column; padding:24px;">
+          <p class="kicker" style="margin:0;">Output Console Terminal</p>
+          <pre id="output">Write code and run tests to compile your python execution logs.</pre>
+          <div id="coding-feedback" style="margin-top:12px;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Monaco Editor dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.49.0/min/vs/loader.js"></script>
+  <script src="/static/platform.js?v=2"></script>
+</body>
+</html>

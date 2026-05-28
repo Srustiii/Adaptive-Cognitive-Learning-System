@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Analytics - AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-admin-page="analytics">
+  <nav class="top-nav admin-nav"></nav>
+  <main class="app-layout">
+    <aside class="sidebar admin-sidebar"></aside>
+    <section class="content">
+      <div class="page-heading">
+        <p class="kicker">Learner Behavior Insights</p>
+        <h1>Admin Analytics</h1>
+        <p>Performance tracking, hesitation frequency, confidence distribution, and adaptive difficulty progression.</p>
+      </div>
+
+      <section class="panel">
+        <h3>Learner Performance Table</h3>
+        <div class="table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Responses</th>
+                <th>Proficiency</th>
+                <th>Confidence</th>
+                <th>Hesitations</th>
+                <th>Misconceptions</th>
+              </tr>
+            </thead>
+            <tbody id="learner-table-body">
+              <tr><td colspan="7">Loading learners...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="admin-grid">
+        <section class="panel">
+          <h3>Proficiency Tracking</h3>
+          <div id="proficiency-tracking" class="bar-list"></div>
+        </section>
+        <section class="panel">
+          <h3>Confidence Distribution</h3>
+          <div id="confidence-distribution" class="bar-list"></div>
+        </section>
+      </div>
+
+      <div class="admin-grid">
+        <section class="panel">
+          <h3>Hesitation Frequency</h3>
+          <div id="hesitation-frequency" class="bar-list"></div>
+        </section>
+        <section class="panel">
+          <h3>Adaptive Difficulty Progression</h3>
+          <div id="difficulty-progression" class="bar-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="/static/admin.js?v=1"></script>
+</body>
+</html>

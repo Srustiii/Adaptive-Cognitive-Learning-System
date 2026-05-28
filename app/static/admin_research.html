@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Research - AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-admin-page="research">
+  <nav class="top-nav admin-nav"></nav>
+  <main class="app-layout">
+    <aside class="sidebar admin-sidebar"></aside>
+    <section class="content">
+      <div class="page-heading">
+        <p class="kicker">Administrative Research Console</p>
+        <h1>System Evaluation Simulator</h1>
+        <p>Evaluate Thompson Sampling against random sequencing using Monte Carlo learner simulations.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Launch Monte Carlo Run</h3>
+        <p class="panel-copy">
+          Run simulated learner paths through random and adaptive sequencing, then save plotted performance curves for paper and conference screenshots.
+        </p>
+        <button id="run-simulation" class="btn primary" style="width:100%;">Run simulator</button>
+      </div>
+
+      <div class="panel" style="margin-top:24px;">
+        <h3>Plotted Evaluation Graphs</h3>
+        <p class="panel-copy">Adaptive progression, uncertainty convergence, confidence trends, and random-vs-adaptive comparison.</p>
+        <div id="research-output" class="research-grid">
+          <div class="empty-state">Loading research graphs...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/static/admin.js?v=1"></script>
+</body>
+</html>

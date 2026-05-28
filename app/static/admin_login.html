@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-admin-page="login">
+  <main class="auth-page">
+    <section class="auth-card">
+      <a class="brand" href="/"><span></span>AdaptiveLearn AI</a>
+      <p class="kicker">Internal Access</p>
+      <h1>Admin Login</h1>
+      <p class="muted">Research analytics and platform monitoring.</p>
+      <form id="admin-login-form" class="stack-form">
+        <input id="admin-username" type="text" autocomplete="username" placeholder="Admin username" required>
+        <input id="admin-password" type="password" autocomplete="current-password" placeholder="Admin password" required>
+        <button class="btn primary" type="submit">Sign in</button>
+        <p id="admin-login-message" class="form-message"></p>
+      </form>
+    </section>
+  </main>
+  <script src="/static/admin.js?v=1"></script>
+</body>
+</html>

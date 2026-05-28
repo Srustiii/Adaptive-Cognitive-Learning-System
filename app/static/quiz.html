@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptive Assessment · AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-page="quiz">
+
+  <nav class="top-nav app-nav"></nav>
+
+  <main class="app-layout">
+    <aside class="sidebar"></aside>
+
+    <section class="content split">
+      <!-- Main Quiz Board -->
+      <div class="panel quiz-panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <div>
+            <p class="kicker" id="quiz-course">Adaptive Assessment</p>
+            <h1 style="font-size:2rem; line-height:1.1;">Evaluation Session</h1>
+            <p id="question-progress" style="color:var(--muted); margin-top:6px;">Question 1 of 15</p>
+          </div>
+          <!-- Read-only automatic live timer -->
+          <div class="timer-display" id="live-timer">0:00</div>
+        </div>
+
+        <!-- Progress Tracker Map -->
+        <div style="margin-bottom: 24px;">
+          <div class="progress-track"><i id="quiz-meter" style="width: 50%;"></i></div>
+        </div>
+
+        <article class="question-card" id="quiz-container">
+          <div class="question-meta">
+            <span class="topic-tag" id="question-topic">Variables</span>
+            <span class="diff-tag easy" id="question-difficulty">Easy</span>
+          </div>
+          <h2 id="question-text">Initializing adaptive algorithm...</h2>
+          <div id="options-grid" class="options-group">
+            <!-- Dynamically populated options -->
+          </div>
+        </article>
+
+        <!-- Response Controls -->
+        <div class="control-row">
+          <div class="slider-container">
+            <div class="slider-meta">
+              <span>Rate your self-confidence</span>
+              <span id="confidence-value" style="color:var(--cyan);">80%</span>
+            </div>
+            <input type="range" id="confidence" min="0" max="1" step="0.05" value="0.8">
+          </div>
+          
+          <div style="display:flex; gap:16px; margin-top:16px;">
+            <button id="submit-answer" class="btn primary" style="flex:1;">Submit Answer</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side-by-Side Cognitive Insights Panel -->
+      <aside class="panel insight-panel">
+        <p class="kicker">Real-time Cognitive Insights</p>
+        <h2 id="cognitive-state">Learning</h2>
+        
+        <div style="margin: 16px 0;">
+          <h4 style="font-size:0.8rem; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Model Explanation</h4>
+          <p id="explanation" class="explanation-box">The RL engine will output a dynamic diagnosis explaining the difficulty adjustments after your first response.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:auto; border-top:1px solid var(--line); padding-top:16px;">
+          <div style="text-align:center;">
+            <span style="font-size:0.75rem; color:var(--muted); display:block; margin-bottom:4px;">Proficiency</span>
+            <strong id="proficiency" style="font-size:1.6rem; color:var(--cyan); font-family:'Outfit';">0.50</strong>
+          </div>
+          <div style="text-align:center;">
+            <span style="font-size:0.75rem; color:var(--muted); display:block; margin-bottom:4px;">Uncertainty</span>
+            <strong id="uncertainty" style="font-size:1.6rem; color:var(--pink); font-family:'Outfit';">0.50</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="/static/platform.js?v=2"></script>
+  <script>
+    // Live update the slider value indicator
+    document.getElementById('confidence').addEventListener('input', (e) => {
+      document.getElementById('confidence-value').textContent = Math.round(e.target.value * 100) + '%';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Details · AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-page="course">
+
+  <nav class="top-nav app-nav"></nav>
+
+  <main class="app-layout">
+    <aside class="sidebar"></aside>
+
+    <section class="content">
+      <div class="panel" style="background: radial-gradient(circle at 100% 0%, rgba(6, 182, 212, 0.08), transparent 40%);">
+        <p class="kicker" id="course-level">Enrolled Track</p>
+        <h1 id="course-title" style="font-size:2.8rem; margin-bottom:12px; font-family:'Outfit';">Python Track</h1>
+        <p id="course-desc" style="color:var(--muted); line-height:1.6; margin-bottom:24px;">Loading track parameters...</p>
+        
+        <div style="display:flex; gap:16px; flex-wrap:wrap;" id="course-quick-actions">
+          <!-- Enroll or start quiz buttons -->
+        </div>
+      </div>
+
+      <!-- Course Stats Row -->
+      <div class="mini-stats" style="margin-top: 24px; margin-bottom: 32px;">
+        <div class="stat-card">
+          <div class="stat-label">Track Mastery</div>
+          <div class="stat-value" id="course-mastery">0%</div>
+          <div class="stat-subtext">Estimated proficiency in this track</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Evaluation Precision</div>
+          <div class="stat-value" id="course-uncertainty">0.50</div>
+          <div class="stat-subtext">Bayesian model uncertainty margin</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Activities Completed</div>
+          <div class="stat-value" id="course-completed">0</div>
+          <div class="stat-subtext">Total answers logged</div>
+        </div>
+      </div>
+
+      <!-- Course Syllabus / Topics -->
+      <div class="panel" id="syllabus-panel">
+        <h3>Track Progression Syllabus</h3>
+        <div class="syllabus-list">
+          <!-- Loaded dynamically by platform.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/platform.js?v=2"></script>
+</body>
+</html>

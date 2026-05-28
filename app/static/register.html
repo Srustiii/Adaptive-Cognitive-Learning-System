@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register · AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-page="register">
+
+  <main class="auth-page">
+    <section class="auth-card">
+      <a class="brand" href="/"><span></span>AdaptiveLearn AI</a>
+      <h1 style="margin-top: 12px; margin-bottom: 6px;">Create your profile</h1>
+      <p style="color:var(--muted); font-size:0.9rem; margin-bottom: 24px;">Your profile stores adaptive history for quiz and coding lab sessions.</p>
+      
+      <form id="register-form" class="stack-form">
+        <input id="name" type="text" placeholder="Full name" required autocomplete="name">
+        <input id="email" type="email" placeholder="Email Address" required autocomplete="email">
+        <input id="password" type="password" placeholder="Choose Password" required autocomplete="new-password">
+        <button class="btn primary" type="submit" style="width:100%;">Create Account</button>
+      </form>
+      
+      <p style="color:var(--muted); font-size:0.9rem;">
+        Already registered? <a href="/app/login" style="color: var(--cyan); font-weight:600;">Sign in</a>
+      </p>
+      
+      <p id="auth-message" style="color: var(--pink); font-size:0.85rem; margin-top:16px; min-height:20px;"></p>
+    </section>
+  </main>
+
+  <script src="/static/platform.js?v=2"></script>
+</body>
+</html>

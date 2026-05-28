@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.idea/
+.vscode/
+adaptive_quiz.db
+adaptive_learning.db
+simulation_results/
+uvicorn-*.log
+alembic/versions/

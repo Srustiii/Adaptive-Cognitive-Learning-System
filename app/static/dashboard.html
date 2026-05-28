@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-page="dashboard">
+
+  <nav class="top-nav app-nav"></nav>
+
+  <main class="app-layout">
+    <aside class="sidebar"></aside>
+    
+    <section class="content">
+      <div style="margin-bottom: 32px;">
+        <p class="kicker">Student Portal</p>
+        <h1 style="font-size:2.5rem; line-height:1.1;">Welcome back, <span id="student-name">Learner</span>! 👋</h1>
+        <p style="color: var(--muted); margin-top: 6px;">Your adaptive learning dashboard is compiled and ready.</p>
+      </div>
+
+      <!-- Cognitive System Recommendations -->
+      <div class="recommendation-alert" id="cognitive-advice">
+        <div class="recommendation-icon">💡</div>
+        <div class="recommendation-text">
+          <h4>Analyzing Cognitive Profile...</h4>
+          <p>The system is loading your response logs and updating the Thompson Sampling probability densities.</p>
+        </div>
+      </div>
+
+      <!-- Overview Stats Grid -->
+      <div class="mini-stats">
+        <div class="stat-card">
+          <div class="stat-label">Overall Proficiency</div>
+          <div class="stat-value" id="overall-proficiency">0%</div>
+          <div class="stat-subtext">Estimated conceptual mastery</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">System Confidence</div>
+          <div class="stat-value" id="overall-uncertainty">0%</div>
+          <div class="stat-subtext">1 - Bayesian uncertainty margin</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Active Courses</div>
+          <div class="stat-value" id="overall-enrolled">0</div>
+          <div class="stat-subtext">Currently enrolled tracks</div>
+        </div>
+      </div>
+
+      <!-- Courses Section -->
+      <div style="margin-top: 32px;">
+        <h3 style="font-size: 1.4rem; margin-bottom: 16px;">Personalized Learning Tracks</h3>
+        <div id="course-grid" class="course-grid">
+          <!-- Dynamically loaded course cards -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/platform.js?v=2"></script>
+</body>
+</html>

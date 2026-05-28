@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-admin-page="dashboard">
+  <nav class="top-nav admin-nav"></nav>
+  <main class="app-layout">
+    <aside class="sidebar admin-sidebar"></aside>
+    <section class="content">
+      <div class="page-heading">
+        <p class="kicker">Internal Admin</p>
+        <h1>Research Dashboard</h1>
+        <p>Private platform health, learner behavior, and adaptive system signals.</p>
+      </div>
+
+      <div class="mini-stats">
+        <div class="stat-card"><div class="stat-label">Learners</div><div id="admin-learners" class="stat-value">0</div><div class="stat-subtext">registered students</div></div>
+        <div class="stat-card"><div class="stat-label">Active Sessions</div><div id="admin-active-sessions" class="stat-value">0</div><div class="stat-subtext">open quiz sessions</div></div>
+        <div class="stat-card"><div class="stat-label">Avg Proficiency</div><div id="admin-proficiency" class="stat-value">0%</div><div class="stat-subtext">Bayesian estimate</div></div>
+      </div>
+
+      <div class="mini-stats">
+        <div class="stat-card"><div class="stat-label">Misconceptions</div><div id="admin-misconceptions" class="stat-value">0</div><div class="stat-subtext">high-confidence wrong answers</div></div>
+        <div class="stat-card"><div class="stat-label">Hesitations</div><div id="admin-hesitations" class="stat-value">0</div><div class="stat-subtext">slow or low-confidence responses</div></div>
+        <div class="stat-card"><div class="stat-label">Avg Confidence</div><div id="admin-confidence" class="stat-value">0%</div><div class="stat-subtext">self-reported confidence</div></div>
+      </div>
+
+      <div class="admin-grid">
+        <section class="panel">
+          <h3>Misconception Statistics</h3>
+          <div id="misconception-topics" class="bar-list"></div>
+        </section>
+        <section class="panel">
+          <h3>Hesitation Analytics</h3>
+          <div id="hesitation-topics" class="bar-list"></div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <h3>Confidence Trends</h3>
+        <div id="confidence-trends" class="trend-chart"></div>
+      </section>
+    </section>
+  </main>
+  <script src="/static/admin.js?v=1"></script>
+</body>
+</html>

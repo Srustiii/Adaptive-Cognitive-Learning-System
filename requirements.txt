@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic[email]
+email-validator
+jinja2
+matplotlib
+pandas
+numpy
+python-multipart

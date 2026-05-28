@@ -1,0 +1,69 @@
+course,topic,difficulty_label,difficulty,question,option_a,option_b,option_c,option_d,correct_answer,explanation,question_type,starter_code,test_code
+Python,variables,easy,0.25,Which of the following is a valid variable name in Python?,my_variable_1,1_variable,my-variable,global,A,"Variable names in Python must start with a letter or an underscore, cannot contain hyphens, and cannot be reserved keywords like 'global'.",,,
+Python,variables,medium,0.55,"What will be the output of executing x = [1, 2] followed by y = x and y.append(3)?","x is [1, 2, 3], y is [1, 2, 3]","x is [1, 2], y is [1, 2, 3]","x is [1, 2, 3], y is [1, 2]",Python raises a TypeError,A,"In Python, assigning a list reference to another variable (y = x) makes both point to the same object in memory. Modifying the list through y also modifies it for x.",,,
+Python,variables,hard,0.85,"What is the result of the following scoping behavior in Python?
+
+x = 10
+def f():
+    global x
+    x = 20
+    def g():
+        nonlocal x
+        x = 30
+    g()
+f()
+print(x)",SyntaxError: nonlocal variable 'x' bound at global scope,30,20,10,A,"The 'nonlocal' keyword is used to refer to a variable in the nearest enclosing scope that is not global. Since x is declared 'global' in f(), it exists in the global scope, causing a SyntaxError in g().",,,
+Python,loops,easy,0.25,"What is the output of the loop: for i in range(3): print(i, end=' ')?",0 1 2 ,1 2 3 ,0 1 2 3 ,"0, 1, 2",A,"range(3) generates a sequence of integers starting from 0 and ending before 3 (yielding 0, 1, 2).",,,
+Python,loops,medium,0.55,What does the 'else' block in a Python 'for' or 'while' loop do?,Executes only if the loop completes all iterations without encountering a 'break' statement.,Executes if the loop condition was false from the very beginning.,Executes after every single iteration of the loop.,Acts as a catch block if any exception occurs inside the loop.,A,"In Python, the 'else' clause of a loop executes when the loop finishes naturally (meaning no 'break' statement was encountered).",,,
+Python,loops,hard,0.85,"What is the output of the following nested loop code?
+
+result = []
+for x in range(3):
+    for y in range(3):
+        if x == y:
+            break
+        result.append((x, y))
+print(result)","[(1, 0), (2, 0), (2, 1)]","[(0, 0), (1, 1), (2, 2)]","[(0, 1), (0, 2), (1, 2)]","[(1, 0), (2, 0)]",A,"When x == y, the inner loop breaks. For x=0, it breaks at y=0. For x=1, (1, 0) is added, then breaks at y=1. For x=2, (2, 0) and (2, 1) are added, then breaks at y=2. Thus, result is [(1, 0), (2, 0), (2, 1)].",,,
+Python,functions,easy,0.25,What is the correct way to define a function named 'greet' that takes a parameter 'name' in Python?,def greet(name):,function greet(name) {,def greet name:,greet = function(name):,A,"Functions in Python are defined using the 'def' keyword, followed by the function name, parameters in parentheses, and a colon.",,,
+Python,functions,medium,0.55,"What will be the output of executing the following Python function call?
+
+def add_item(item, box=[]):
+    box.append(item)
+    return box
+add_item(1)
+print(add_item(2))","[1, 2]",[2],"[1, [2]]",TypeError: box is not defined,A,Default arguments in Python are evaluated once at definition time. Using a mutable default argument like box=[] shares the same list across all calls that do not provide a custom list.,,,
+Python,functions,hard,0.85,"In Python, what does the double asterisk '**' prefix signify when defining a function parameter like def f(**kwargs)?",It collects arbitrary keyword arguments passed to the function into a dictionary.,It allows passing a list of values as positional arguments.,It performs an exponentiation check on all passed arguments.,It forces the compiler to inline the function for optimization.,A,"The '**kwargs' syntax allows a function to accept any number of keyword arguments, which are collected into a dictionary named kwargs inside the function.",,,
+Python,lists,easy,0.25,How do you access the last element of a Python list named 'items'?,items[-1],items[len(items)],items.last(),items[1],A,"Python supports negative indexing, where -1 represents the last element of the list, -2 the second last, and so on.",,,
+Python,lists,medium,0.55,What is the result of this list comprehension: [x**2 for x in range(5) if x % 2 == 0]?,"[0, 4, 16]","[4, 16]","[0, 1, 4, 9, 16]","[0, 2, 4]",A,"range(5) yields 0, 1, 2, 3, 4. The condition x % 2 == 0 filters even numbers: 0, 2, 4. Squaring them yields 0, 4, 16.",,,
+Python,lists,hard,0.85,"What is the correct output when slicing list nums = [10, 20, 30, 40, 50] with nums[3:1:-1]?","[40, 30]","[40, 30, 20]","[30, 20]",[],A,"The slice starts at index 3 (value 40) and steps backwards by -1 up to (but excluding) index 1 (value 20). Thus, it yields indices 3 and 2, which are 40 and 30.",,,
+Python,exceptions,easy,0.25,"Which block is always executed in a try-except structure in Python, regardless of whether an exception occurred or not?",finally,else,catch,always,A,"The 'finally' block is executed whether an exception was raised or not, making it ideal for cleaning up resources like files or database connections.",,,
+Python,exceptions,medium,0.55,What is the difference between the 'except Exception as e' block and the 'else' block in Python exception handling?,The 'else' block executes only if the 'try' block completed without raising any exceptions.,The 'else' block executes if an exception was caught and handled successfully.,The 'else' block is used to declare variables that are safe from scopes.,There is no difference; they are interchangeable.,A,"In a try-except-else block, the else block runs only if no exception was raised in the try block.",,,
+Python,exceptions,hard,0.85,"What will happen when running this code?
+
+def divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return 'Zero!'
+    finally:
+        return 'Cleaned!'
+print(divide(10, 0))",It prints 'Cleaned!',It prints 'Zero!',It raises a ZeroDivisionError,It prints 'Cleaned!' followed by 'Zero!',A,"If a finally block executes a return statement, that return value will take precedence and discard any return value or exception from the try or except blocks.",,,
+Python,strings,easy,0.25,Which method converts a Python string to all uppercase letters?,text.upper(),text.toUpperCase(),text.capitalize(),text.toUpper(),A,The upper() method returns a copy of the string with all characters converted to uppercase.,,,
+Python,strings,medium,0.55,"What is the result of 'hello'.replace('l', 'x', 1) in Python?",'hexlo','hexxo','helo',TypeError: replace takes exactly 2 arguments,A,The third argument to replace() specifies the maximum number of occurrences to replace. Specifying 1 replaces only the first occurrence of 'l' with 'x'.,,,
+Python,strings,hard,0.85,Why are strings in Python considered 'immutable'?,Any operation that modifies a string creates and returns a completely new string object in memory.,They cannot be accessed by negative indexing.,They cannot be concatenated using the '+' operator.,Their memory addresses are fixed at compile time.,A,Immutability means a string object's content cannot be changed in-place. Doing so creates a new string object in memory rather than modifying the original.,,,
+Python,dictionaries,easy,0.25,How do you add a new key-value pair 'a': 1 to a Python dictionary named d?,d['a'] = 1,"d.add('a', 1)","d.insert('a', 1)","d.put('a', 1)",A,You can add a key-value pair to a dictionary by using square brackets with the key and assigning a value.,,,
+Python,dictionaries,medium,0.55,What will happen if you attempt to access d['missing'] on a dictionary d that does not have the key 'missing'?,It raises a KeyError,It returns None,It creates the key automatically with a value of None,It raises a ValueError,A,"Accessing a non-existent key directly via square brackets d[key] raises a KeyError. To return a default value instead, use d.get(key).",,,
+Python,dictionaries,hard,0.85,"What is the output of the following dictionary comprehension code?
+
+print({x: x**2 for x in range(3) if x > 0})","{1: 1, 2: 4}","{0: 0, 1: 1, 2: 4}","[1: 1, 2: 4]","{1, 4}",A,"The expression generates key-value pairs where the key is x and the value is x**2 for x in 0, 1, 2 where x > 0. The only items qualifying are 1 and 2, yielding {1: 1, 2: 4}.",,,
+Python,files,easy,0.25,"What is the recommended statement in Python to ensure files are closed automatically after use, even if an exception occurs?",with open('file.txt') as f:,open('file.txt') as f:,try f = open('file.txt'),file.open('file.txt'),A,"The 'with' statement utilizes a context manager which automatically manages file resources, closing the file when the block is exited.",,,
+Python,files,medium,0.55,Which file opening mode should you use to add text to the end of an existing file without wiping its current content?,'a','w','r','x',A,"The 'a' mode stands for append. It opens the file and positions the pointer at the end of the file, preserving any existing content.",,,
+Python,files,hard,0.85,What happens under the hood when a context manager is used with the 'with' statement in Python?,The runtime automatically invokes the object's __enter__() method on block entry and its __exit__() method upon block exit.,Python compiles the block into a thread-safe atomic transaction.,Memory for all variables inside the block is immediately garbage-collected.,The file contents are fully loaded into a system-level virtual memory buffer.,A,The context manager protocol in Python relies on defining __enter__ to setup resources and __exit__ to handle cleanup and exceptions.,,,
+Python,loops,easy,0.25,Write a function sum_numbers(values) that returns the sum of a list.,,,,,tests,Solve the function so the hidden-style checks pass.,coding,"def sum_numbers(values):
+    pass","assert sum_numbers([1, 2, 3]) == 6
+assert sum_numbers([]) == 0"
+Python,strings,medium,0.55,Write count_vowels(text) that returns the number of vowels.,,,,,tests,Solve the function so the hidden-style checks pass.,coding,"def count_vowels(text):
+    pass","assert count_vowels('Adaptive') == 4
+assert count_vowels('xyz') == 0"
+Python,lists,hard,0.85,Write unique_sorted(values) that returns sorted unique values.,,,,,tests,Solve the function so the hidden-style checks pass.,coding,"def unique_sorted(values):
+    pass","assert unique_sorted([3, 1, 3, 2]) == [1, 2, 3]"

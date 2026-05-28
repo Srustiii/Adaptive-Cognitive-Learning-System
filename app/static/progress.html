@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress · AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-page="progress">
+
+  <nav class="top-nav app-nav"></nav>
+
+  <main class="app-layout">
+    <aside class="sidebar"></aside>
+    
+    <section class="content">
+      <div style="margin-bottom: 32px;">
+        <p class="kicker">Personalized Progression</p>
+        <h1 style="font-size:2.5rem; line-height:1.1;">Your Mastery Map 📈</h1>
+        <p style="color: var(--muted); margin-top: 6px;">Track your adaptive evolution and decrease system uncertainty across tracks.</p>
+      </div>
+
+      <!-- Core Progress Summary Cards -->
+      <div id="progress-summary" class="progress-summary">
+        <!-- Loaded dynamically by platform.js -->
+      </div>
+
+      <!-- Educational Context Card -->
+      <div class="panel" style="margin-top: 24px; border-color: rgba(6, 182, 212, 0.15);">
+        <h3>Understanding Your Cognitive Mastery Score</h3>
+        <p style="color:var(--muted); font-size:0.95rem; line-height:1.6; margin-top:12px; margin-bottom:16px;">
+          The AdaptiveLearn AI platform utilizes a <strong>Bayesian Proficiency Estimator</strong> modeled using Beta probability distributions. 
+        </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; font-size:0.85rem; color:var(--text-secondary);">
+          <div style="padding:16px; border-radius:12px; background:rgba(255,255,255,0.01); border:1px solid var(--line);">
+            <strong style="color:var(--cyan); display:block; margin-bottom:4px;">Mastery Percentage</strong>
+            Represents the system's estimated probability that you will successfully solve a challenge at standard difficulty. It rises with correct answers and speed, adapting to harder topics as you progress.
+          </div>
+          <div style="padding:16px; border-radius:12px; background:rgba(255,255,255,0.01); border:1px solid var(--line);">
+            <strong style="color:var(--pink); display:block; margin-bottom:4px;">Model Uncertainty Margin</strong>
+            Quantifies the statistical variance of the probability distribution. The more activities you complete, the lower the uncertainty becomes, locking in a precise diagnosis of your mastery levels.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/platform.js?v=2"></script>
+</body>
+</html>

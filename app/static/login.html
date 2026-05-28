@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login · AdaptiveLearn AI</title>
+  <script src="/static/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body data-page="login">
+
+  <main class="auth-page">
+    <section class="auth-card">
+      <a class="brand" href="/"><span></span>AdaptiveLearn AI</a>
+      <h1 style="margin-top: 12px; margin-bottom: 6px;">Welcome back</h1>
+      <p style="color:var(--muted); font-size:0.9rem; margin-bottom: 24px;">Sign in to continue your personalized learning track.</p>
+      
+      <form id="login-form" class="stack-form">
+        <input id="email" type="email" placeholder="Email Address" required autocomplete="email">
+        <input id="password" type="password" placeholder="Password" required autocomplete="current-password">
+        <button class="btn primary" type="submit" style="width:100%;">Sign In</button>
+      </form>
+      
+      <p style="color:var(--muted); font-size:0.9rem;">
+        New here? <a href="/app/register" style="color: var(--cyan); font-weight:600;">Create account</a>
+      </p>
+      
+      <p id="auth-message" style="color: var(--pink); font-size:0.85rem; margin-top:16px; min-height:20px;"></p>
+    </section>
+  </main>
+
+  <script src="/static/platform.js?v=2"></script>
+</body>
+</html>
